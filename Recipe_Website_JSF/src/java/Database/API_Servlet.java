@@ -31,7 +31,6 @@ import org.json.simple.parser.ParseException;
 /**
  *
  * @author Ammar Ali Moazzam
- * MISIS: M00696114
  */
 
 public class API_Servlet extends HttpServlet {
@@ -43,10 +42,10 @@ public class API_Servlet extends HttpServlet {
 
         try {
             //app id for the API
-            String appId = "95f29795";
+            String appId = "appID";
             
             //app key for the API
-            String appKey = "afe2b0893e84bfad19b50b9689b35a77";
+            String appKey = "appKey";
 
             //getting search query from the client request
             String search = request.getParameter("search-bar");
