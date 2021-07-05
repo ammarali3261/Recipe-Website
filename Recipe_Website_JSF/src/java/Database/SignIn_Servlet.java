@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Ammar ALi Moazzam MISIS: M00696114
+ * @author Ammar Ali
  */
 @WebServlet(name = "SignIn_Servlet", urlPatterns = {"/SignIn_Servlet"})
 public class SignIn_Servlet extends HttpServlet {
