@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * contains the necessary methods for achieving a successful connection.
 * 
  * 
- * @author Ammar Ali Moazzam : M00696114
+ * @author Ammar Ali Moazzam
  */
 public class DBConnection {
     
@@ -25,9 +25,9 @@ public class DBConnection {
     //gives the path for the mysql driver
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     //username for the database
-    private static final String USER = "root";
+    private static final String USER = "username";
     //password for the database
-    private static final String PASS = "ammar";
+    private static final String PASS = "password";
     
     
     //connection method that makes the connection to the database
