@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author Ammar Ali Moazzam
- * MISIS: M00696114
  */
 public class AboutUs_Servlet extends HttpServlet {
 
