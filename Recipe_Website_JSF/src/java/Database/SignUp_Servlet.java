@@ -20,7 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author Ammar Ali Moazzam
- * MISIS: M00696114
  */
 @WebServlet(name = "SignUp_Servlet", urlPatterns = {"/SignUp_Servlet"})
 public class SignUp_Servlet extends HttpServlet {
