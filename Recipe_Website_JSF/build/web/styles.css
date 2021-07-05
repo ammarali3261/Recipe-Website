@@ -1,0 +1,704 @@
+/*Basic styling for the entire page*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Setting the line height and font for the body*/
+body {
+    font-family: "Pacifico", cursive;
+    line-height: 1.5;
+}
+
+/*Styling the title text*/
+.title-text {
+    font-size: 40px;
+    text-align: center;
+}
+
+
+/*Styling the Nav bar*/
+#menu-bar{
+    width: 50px;
+    height: 10px;
+    margin: 50px 10px 10px 20px;
+    position: fixed;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/*Setting color and transition to the bar*/
+.bar{
+    background: orange;
+    border-radius: 10%;
+    transition: .4s;
+}
+
+#bar1{
+    width: 40px;
+    height: 10px;
+    transform: translateY(-4px);
+}
+
+#bar2{
+    width: 40px;
+    height: 10px;
+}
+
+#bar3{
+    width: 40px;
+    height: 10px;
+    transform: translateY(4px);
+}
+
+.change .bar{
+    background: white;
+}
+
+.change #bar1{
+    transform: translateY(6px);
+    rotate: z(45deg);
+}
+
+.change #bar3{
+    transform: translateY(-15px);
+    rotate: z(-45deg);
+}
+
+.change #bar2{
+    opacity: 0;
+}
+
+/*Adding styles like color, font size, etc to links in nav bar*/
+.nav li a{
+    text-decoration: none;
+    color: orange;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*defines what happens when one hovers over nav bar links*/
+.nav li:hover a:hover{
+    color: white;
+    background: orange;
+    padding-left: 10px;
+}
+
+/*Assigning margin and padding to list items in navbar*/
+.nav li{
+    margin: 20px 10px 10px 20px ;
+    padding-top: 10px;
+    list-style-type: none;
+}
+
+.nav{
+    display: none;
+}
+
+.change-btn{
+    display: block;
+}
+
+/*Styling for the header section*/
+/*adding background images and linear gradient*/
+.header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+        url(images/bg.jpg) center/cover no-repeat fixed;
+    margin-top: auto;
+}
+
+/*styling the search bar holder area*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/*giving custom font size and color to the title*/
+.hero .title {
+    color: white;
+    font-size: 50px;
+}
+
+/*changing display property of the search*/
+.hero .search{
+    display: flex;
+}
+
+/*styling the search bar by giving custom colors and fonts*/
+#search-bar{
+    background: orange;
+    color: #000000;
+    font-weight: bold;
+    font-family: "Pacifico", cursive;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 50px;
+    width: auto;
+    margin: 10px;
+}
+
+/*Media queriesto make the website responsive*/
+@media  screen and (max-width: 450px){
+    #search-bar{
+        width: 200px;
+    }
+    .hero .search{
+        display: contents;
+    }
+
+}
+
+/*styling the button*/
+.hero-button {
+    display: flex;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    border-radius: 200px;
+    font-weight: bold;
+    background: orange;
+    color: #ffffff;
+    cursor: pointer;
+    border: 2px solid orange;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+changing color of the search button upon hover
+.hero-button:hover {
+    background: white;
+    color: orange;
+    border: none;
+    text-decoration: none;
+}
+
+/*Adding cool pulsating effet to the searh button*/
+.pulsate {
+    animation: pulsate 3s ease-in-out;
+    animation-iteration-count: infinite;
+    opacity: 0.3;
+    color: black;
+}
+
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+#about {
+    padding: 40px;
+}
+
+/*styling the about section*/
+.about {
+    margin: 30px 0px;
+    display: flex;
+    cursor: default;
+}
+
+changing the style and color of the icon  
+.about-icon .fas {
+    font-size: 60px;
+    color: orange;
+    margin-right: 20px;
+}
+
+/*styling the subtitle*/
+.about-subtitle {
+    text-transform: capitalize;
+    color: orange;
+    font-size: 25px;
+    cursor: default;
+}
+
+/*positioning the text*/
+.about-info {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/*Adding cool transitions to icons*/
+.about-icon:hover .fas,
+.about-subtitle:hover {
+    transition: transform 2s ease, color 2s ease;
+    transform: translateY(-10px);
+    color: #cd6100;
+    cursor: default;
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width: 576px) {
+    .about-center {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .about {
+        flex: 0 0 calc(50% - 16px);
+    }
+
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width: 972px) {
+    .about {
+        flex: 0 0 calc(33.3% - 16px);
+    }
+}
+
+/*adding background image to this section*/
+.menu-image {
+    min-height: 80vh;
+    background: url(images/bg.jpg) center/cover fixed no-repeat;
+}
+
+/*styling the text placed in the menu section*/
+.menu-text {
+    min-height: 80vh;
+    align-items: center;
+    background: orange;
+    columns: #000000;
+    padding: 40px 0;
+}
+
+.menu-text-center {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu-text h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.menu-text p {
+    margin: 20px 0;
+    line-height: 2;
+}
+
+/*change color upon hover*/
+.menu-text a:hover {
+    color: orange;
+    background: #ffffff;
+    border: none;
+    text-decoration: none;
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width: 776px) {
+    .menu {
+        display: flex;
+    }
+    .menu-text {
+        flex: 0 0 30%;
+    }
+    .menu-image {
+        flex: 0 0 70%;
+        clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+    }
+    .menu {
+        background: orange;
+    }
+}
+
+#social-icons {
+    height: 150px;
+    background: #ffffff;
+    text-align: center;
+    padding: 50px 0 50px 0;
+}
+
+/*transitions and other styles for the social media icons*/
+#social-icons a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 40px;
+    border-radius: 5px;
+    transition: transform 2s ease, color 2s ease;
+}
+
+/*move the icons up upon hover*/
+#social-icons a:hover {
+    transform: translateY(-20px);
+}
+
+/*giving facebook color to the icon*/
+.facebook {
+    color: #3b5998;
+}
+
+/*giving twitter color to the icon*/
+.twitter {
+    color: #38a1f3;
+}
+
+/*giving instagram color to the icon*/
+.instagram {
+    color: #e1306c;
+}
+
+/*giving google color to the icon*/
+.plus {
+    color: #db4a39;
+}
+
+/*styling the number sectioon*/
+.number {
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+        url(images/bg.jpg) center/cover no-repeat fixed;
+    padding: 60px 0;
+    color: #ffffff;
+}
+
+/*increase font size and make bold the paragraph text*/
+.number p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*change the color upon hover*/
+.number:hover {
+    color: orange;
+}
+
+/*enlarging the font of the icon*/
+.number .fas {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+/*capitalizing the heading*/
+.number h3 {
+    text-transform: uppercase;
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width: 576px) {
+    #numbers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width: 992px) {
+    #numbers {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+#food {
+    padding: 20px;
+}
+
+/*styling the food container*/
+.food-container {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+/*styling the food card by giving liear backgrounds and box shadows etc*/
+.food-card {
+    position: relative;
+    background: linear-gradient(rgba(205, 96, 0, 0.7), rgba(205, 96, 0, 0.7));
+    margin: 20px 0;
+    color: #000000;
+    overflow: hidden;
+    padding: 3px;
+    border-radius: 16px;
+    border: 1px solid orange;
+    box-shadow: 2px 3px 1px 1px #cd6100;
+}
+
+/*styling all the images under food id*/
+#food img {
+    width: 100%;
+    min-height: 100%;
+    display: block;
+    transition: transform 4s;
+}
+
+/*styling for the image text*/
+.img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 4s;
+}
+
+/*changes the text size*/
+.img-text h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/*provide zoom in efect and change opacity upon hover*/
+.food-card:hover img {
+    opacity: 0.4;
+    transform: scale(1.3);
+    pointer: cursor;
+}
+
+/*change opacity upon hover*/
+.food-card:hover .img-text,
+.food-card:hover {
+    opacity: 1;
+}
+
+/*styling the food button*/
+.food-btn {
+    display: inline-block;
+    background: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 12px 32px;
+    color: white;
+    font-weight: bold;
+    border-radius: 180px;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+    outline: none;
+}
+
+/*changes the color of button upon hover*/
+.food-btn:hover {
+    color: orange;
+    background: white;
+    border: black;
+    outline: none;
+}
+
+/*increasing the font size*/
+.fas {
+    font-size: 30px;
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width: 576px) {
+    .food-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 16px;
+    }
+}
+
+/*Media queries to make the website responsive*/
+@media sceen and (min-width: 992px) {
+    .food-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 16px;
+    }
+}
+
+
+/*background for the gallery */
+#gallery{
+    padding: 40px;
+    background: white;
+}
+
+/*background for the gallery item*/
+.gallery-item{
+    background: linear-gradient(rgba(241,161,13)rgb(255,165,0));
+}
+
+/*setting style to the gallery img*/
+.gallery-item img{
+    display: block;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+/*changes the opacity og=f the gallery image upon hover*/
+.gallery-item img:hover{
+    opacity: 0.5;
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width:576px){
+    #gallery-center{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (min-width:992px){
+    #gallery-center{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+/*setting the colors and text alignment for the footer*/
+.footer{
+    background: #000000;
+    text-align: center;
+    color: orange;
+}
+
+/*giving footer text color, fontsize etc*/
+.footer .text{
+    text-transform: uppercase;
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+}  
+
+/*setting basic style propertie for the nav bar*/
+nav {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 5%;
+    height: 100px;
+    background-color: #0b0b0b;
+    opacity: 0.8;
+}
+
+/* positioning the logo inside th nav bar*/
+nav .logo {
+    float: left;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: orange;
+}
+
+nav .links {
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .links li {
+    list-style: none;
+}
+
+/*styling the nav link*/
+nav .links a {
+    display: block;
+    padding: 1em;
+    font-size: 20px;
+    font-weight: bold;
+    color: #cd6100;
+    text-decoration: none;
+    border-radius: 200px;
+}
+
+/*coor changes when you hover over nav links*/
+nav .links a:hover {
+    background-color: orange;
+    color: black;
+}
+
+#nav-toggle {
+    position: absolute;
+    top: -100px;
+}
+
+nav .icon-burger {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*setting the diemnsions,color and transition for the burger menu*/
+nav .icon-burger .line {
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+/*Media queries to make the website responsive*/
+@media screen and (max-width: 768px) {
+    nav .logo {
+        float: none;
+        width: auto;
+        justify-content: center;
+    }
+    nav .links {
+        float: none;
+        position: fixed;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 100px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(0,0,0,.8);
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: all .5s ease-in-out;
+    }
+    nav .links a {
+        font-size: 20px;
+    }
+    nav :checked ~ .links {
+        bottom: 0;
+    }
+    nav .icon-burger {
+        display: block;
+    }
+    nav :checked ~ .icon-burger .line:nth-child(1) {
+        transform: translateY(10px) rotate(225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(3) {
+        transform: translateY(-10px) rotate(-225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(2) {
+        opacity: 0;
+    }
+}
+
+/*Styling for the carousel*/
+carousel-inner carousel-item active img{
+    max-height:500px;
+    max-width:500px;
+    height:auto;
+    width:auto;
+}

@@ -1,0 +1,123 @@
+<!--This is the Sign Up page for the website.
+The user can create an account here if he
+doent already have one.-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign Up</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles-signin.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="forms-container">
+                <div class="signin-signup">
+
+                    <!--Form to collect user inut and then send to the servlet using AJAX-->
+                    <form action="SignUp_Servlet" method="POST" class="sign-up-form">
+                        <div id="useless-label">
+                            <label> test </label><br>                          
+                            <label> test </label><br>                          
+                            <label> test </label><br>                          
+                            <label> test </label><br>                          
+                        </div>
+
+                        <h2 class="title">Sign Up</h2>
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <!--Input field for username-->
+                            <input type="text" placeholder="Username" name="username" id="usernameField" required>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <!--Input field for email-->
+                            <input type="email" placeholder="Email" name="emailId" id="emailIdField" required>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <!--Input field for password-->
+                            <input type="password" placeholder="Password" name="password" id="passwordField" required>
+                        </div>
+
+                        <!--Button to submit the form to the servlet-->
+                        <input type="button" value="Sign Up" class="btn solid" id="SignUpBtn">
+                        <label id="error"></label>
+
+                        <!--Using AJAX to send form data to servlet-->
+                        <script>
+                            document.getElementById("SignUpBtn").addEventListener('click', handler);
+                            function handler() {
+
+//                                Checking to make sure that the all the fields in the form are filled in
+                                if (document.getElementById("usernameField").value.length == 0 || document.getElementById("emailIdField").value.length == 0 || document.getElementById("passwordField").value.length == 0) {
+                                    document.getElementById("error").style.color = 'red';
+
+//                                    Displaying an error mesage if the fileds are not filled in
+                                    document.getElementById("error").innerHTML = "Please fill in all the details!!";
+                                } else {
+                                    document.getElementById("error").style.color = 'white';
+                                    document.getElementById("error").innerHTML = '';
+                                    var xhr = new XMLHttpRequest();
+
+//                                    Sending a POST request to the servlet
+                                    xhr.open('POST', 'SignUp_Servlet', true);
+                                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                    xhr.onload = function () {
+
+                                        // Checking the response text to see if sig up is successfull
+                                        if (this.responseText === "Duplicate Email") {
+                                            console.log("duplicate entry")
+
+                                            //Print error message if the email is duplicate
+                                            var msg = "Email Id already in use";
+                                            document.getElementById("error").style.color = 'red';
+                                            document.getElementById("error").innerHTML = msg;
+
+//                                            if the response is success then redirect the user to the sig in page
+                                        } else if (this.responseText === "success") {
+                                            console.log("success")
+                                            var msg = "";
+                                            document.getElementById("error").style.color = 'white';
+                                            document.getElementById("error").innerHTML = msg;
+                                            window.location.href = "signIn.html";
+                                        }
+                                    };
+                                    //Sending all the data to the servlet
+                                    xhr.send('username=' + document.getElementById("usernameField").value
+                                            + '&emailId=' + document.getElementById("emailIdField").value
+                                            + '&password=' + document.getElementById("passwordField").value
+                                            );
+                                }
+                            }
+                        </script>
+                    </form>
+                </div>
+            </div>
+
+            <div class="panels-container">
+                <div class="panel left-panel">
+                </div>
+
+                <!--Panel to house the Sign In text and button-->
+                <div class="panel right-panel">
+                    <div class="content">
+                        <h3>Already a member?</h3>
+                        <p>Click here to head to the Log In Page.</p>
+                        <button class="btn transparent" id="sign-in-btn"onclick="location.href = 'signIn.html'">Sign In</button>
+                    </div>
+                    <img src="images/breakfast.svg" class="image" alt="">
+                </div>
+            </div>
+        </div>
+        <script>document.querySelector(".container").classList.add("sign-up-mode");</script>
+    </body>
+</html>

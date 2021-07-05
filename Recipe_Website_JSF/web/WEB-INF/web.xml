@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>SignIn_Servlet</servlet-name>
+        <servlet-class>Database.SignIn_Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>API_Servlet</servlet-name>
+        <servlet-class>Database.API_Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AboutUs_Servlet</servlet-name>
+        <servlet-class>Database.AboutUs_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignIn_Servlet</servlet-name>
+        <url-pattern>/SignIn_Servlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SignUp_Servlet</servlet-name>
+        <servlet-class>Database.SignUp_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUp_Servlet</servlet-name>
+        <url-pattern>/SignUp_Servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>API_Servlet</servlet-name>
+        <url-pattern>/API_Servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AboutUs_Servlet</servlet-name>
+        <url-pattern>/AboutUs_Servlet</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>signIn.html</welcome-file>
+    </welcome-file-list>
+</web-app>
